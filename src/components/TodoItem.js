@@ -3,6 +3,7 @@ import './TodoItem.css'
 
 
 class TodoItem extends Component {
+
     
     render() {
         let styleClass = 'todo-item'
@@ -11,7 +12,10 @@ class TodoItem extends Component {
         }
 
         return (
-            <div role="listitem" className={styleClass} >
+            <div role="listitem" className={styleClass} onClick={ () => {
+                this.props.handleChange(this.props.item.id)
+                } }>
+                
                 <p> {this.props.item.text}</p>
             </div>
         )

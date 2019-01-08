@@ -18,20 +18,41 @@ class TodoList extends Component {
                     completed: false
                 },
                 {
-                    id: 1,
+                    id: 3,
                     text: "get up from bed",
                     completed: true
                 }
             ]
         }
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(id) {
+        let newTodos = this.state.todos.map( item => {
+                if (id === item.id) {
+                    return {
+                        id: item.id,
+                        text: item.text,
+                        completed: !item.completed
+                    }
+                }
+                return item
+            })
+        
+        this.setState({todos: newTodos})
     }
 
     render() {
-        let todoComponents = this.state.todos.map( item => <TodoItem id={item.id} item={item} /> )
+        let todoComponents = this.state.todos.map( item => <TodoItem 
+            handleChange = {this.handleChange}
+            key={item.id} 
+            item={item} /> )
         return (
-            <section role="list">
-                {todoComponents}
-            </section>
+            <div className="container">
+                <section role="list">
+                    {todoComponents}
+                </section>
+            </div>
         )
     }
 }
