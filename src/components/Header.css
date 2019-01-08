@@ -1,0 +1,7 @@
+.header {
+    font-size: 1.1em;
+    margin: 1em auto 2em;
+    text-align: center;
+    color: var(--text-color-1);
+}
+

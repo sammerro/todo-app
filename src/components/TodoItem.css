@@ -1,0 +1,23 @@
+.todo-item {
+    font-size: 1.2em;
+    padding: 1em 2em;
+    margin-bottom: 1em; 
+    cursor: pointer;
+    background-color: rgb(91, 91, 121);
+    border-radius: 1em;
+    color: var(--text-color-2);
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.todo-item--completed {
+    text-decoration: line-through;
+    background-color: rgb(71, 156, 71);
+}
+.todo-item:hover {
+    background-image: linear-gradient( rgba(255, 255, 255, 0.233), rgba(0, 0, 0, 0.171));
+}
+.todo-item:active {
+    background-image: linear-gradient( rgba(104, 103, 103, 0.233), rgba(0, 0, 0, 0.171));
+}
